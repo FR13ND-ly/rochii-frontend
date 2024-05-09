@@ -1,0 +1,12 @@
+<div class="header">
+  <h1>Produse ({{ products.length }})</h1>
+</div>
+<div class="main">
+  @for (product of products; track product.id ) {
+  <product [product]="product" (delete)="products.splice($index, 1)" />
+  @if (!$last) {
+  <div class="divider"></div>
+  } }@empty {
+  <p>Nu ai selectat produse</p>
+  }
+</div>

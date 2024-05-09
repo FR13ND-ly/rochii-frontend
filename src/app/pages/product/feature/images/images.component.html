@@ -1,0 +1,25 @@
+<div class="images">
+  <div class="images__inner" [style.margin-top]="-12 * scroll() + 'rem'">
+    @for (image of images; track image.id) {
+    <div
+      class="image-wrapper"
+      [class.selected]="image.main"
+      (click)="onChangeMainImg($index)"
+    >
+      <image [image]="image" />
+    </div>
+    }
+  </div>
+  @if (scroll() > 0) {
+  <mat-icon class="decrement" (click)="decrement()">keyboard_arrow_up</mat-icon>
+  }
+  <div></div>
+  @if (images.length > (scroll() + 3)) {
+  <mat-icon class="increment" (click)="increment()"
+    >keyboard_arrow_down</mat-icon
+  >
+  }
+</div>
+<div class="main-image-wrapper">
+  <image [image]="mainImage" />
+</div>

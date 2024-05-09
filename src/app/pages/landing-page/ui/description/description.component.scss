@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  margin-top: 5rem;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+  width: fit-content;
+  z-index: 3;
+  &::after {
+    content: "";
+    height: calc(100% - 2rem);
+    width: calc(100% + 3rem);
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    border: 2px solid #000;
+    z-index: -1;
+  }
+}
+
+.dec {
+  width: 22rem;
+  z-index: -1;
+}
+
+.text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  width: 30rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  margin-top: -1rem;
+}

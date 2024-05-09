@@ -1,0 +1,24 @@
+<div class="header">
+  <h1>Data programării</h1>
+</div>
+<form class="content" [formGroup]="dateForm">
+  <div class="calendar-wrapper" *ngIf="selected$ | async as selected">
+    <mat-calendar
+      [dateFilter]="daysFilter"
+      [selected]="selected"
+      (selectedChange)="updateDate($event)"
+      [minDate]="minDate"
+    ></mat-calendar>
+  </div>
+  <div class="hour-wrapper">
+    <mat-form-field appearance="outline">
+      <mat-label>Ora</mat-label>
+      <mat-select formControlName="hour">
+        @if (availableHours$ | async; as availableHours) { @for (hour of
+        availableHours; track hour) {
+        <mat-option [value]="hour">{{ hour }}:00</mat-option>
+        } @empty { <mat-option>Nu sunt ore libere</mat-option> } }
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>

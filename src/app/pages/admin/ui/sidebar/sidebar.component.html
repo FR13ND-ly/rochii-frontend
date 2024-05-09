@@ -1,0 +1,38 @@
+<nav>
+  <div
+    class="item"
+    routerLink="/admin/dashboard"
+    routerLinkActive="item--activated"
+  >
+    <mat-icon>other_houses</mat-icon>
+    <span>Meniu Principal</span>
+  </div>
+  <div
+    class="item"
+    routerLink="/admin/products"
+    routerLinkActive="item--activated"
+  >
+    <mat-icon>bubble_chart</mat-icon>
+    <span>Produse</span>
+  </div>
+  <div
+    class="item"
+    routerLink="/admin/orders"
+    routerLinkActive="item--activated"
+  >
+    <mat-icon>price_change</mat-icon>
+    <span>Comenzi</span>
+  </div>
+  <div
+    class="item"
+    routerLink="/admin/statistics"
+    routerLinkActive="item--activated"
+  >
+    <mat-icon>insights</mat-icon>
+    <span>Statistică</span>
+  </div>
+  <div class="item logout" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </div>
+</nav>

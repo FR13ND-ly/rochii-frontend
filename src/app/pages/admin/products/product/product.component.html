@@ -1,0 +1,18 @@
+<section class="content">
+  <div class="img-wrapper">
+    <image [image]="product.mainImg" />
+  </div>
+  <div class="details">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p><b>Preț:</b> {{ product.price }} LEI</p>
+  </div>
+</section>
+<section class="actions">
+  <button mat-button (click)="onEdit()" color="primary">
+    <mat-icon>edit</mat-icon> Editează
+  </button>
+  <button mat-button (click)="onDelete()" color="warn">
+    <mat-icon>delete</mat-icon> Șterge
+  </button>
+</section>

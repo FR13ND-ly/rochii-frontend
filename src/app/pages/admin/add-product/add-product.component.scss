@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  gap: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.image {
+  width: 16rem;
+  height: 19rem;
+  position: relative;
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 0.75rem;
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+
+.add-image {
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  mat-icon {
+    scale: 3;
+  }
+}

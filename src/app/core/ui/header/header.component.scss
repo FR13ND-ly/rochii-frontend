@@ -1,0 +1,78 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  z-index: 99;
+  transition: 0.2s;
+  @media (max-width: 801px) {
+    padding-inline: 1rem;
+  }
+}
+
+.title {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cart {
+  transition: 0.2s;
+  filter: invert(1);
+}
+
+.show {
+  background-color: hsla(0, 0%, 100%);
+  border-bottom: 1px solid #000;
+  a {
+    color: #000;
+  }
+  .cart {
+    filter: invert(0);
+    &::after {
+      border: 1px solid #000;
+    }
+  }
+  mat-progress-bar {
+    top: initial;
+    bottom: 0;
+  }
+}
+
+mat-icon {
+  cursor: pointer;
+  position: relative;
+  scale: 1.1;
+}
+
+[data-badge]::after {
+  transition: 0.2s;
+  display: grid;
+  place-items: center;
+  content: attr(data-badge);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 4px;
+  right: 5px;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  font-weight: bolder;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+[data-badge="0"]::after {
+  display: none;
+}
+
+mat-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

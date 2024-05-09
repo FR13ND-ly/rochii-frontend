@@ -1,0 +1,16 @@
+<h2>Vă recomandăm și</h2>
+<div class="products">
+  @if (products$ | async; as products) { @for (product of products; track
+  product.id) {
+  <a href="/product/{{ product.id }}" routerLink="/product/{{ product.id }}">
+    <div class="image-wrapper">
+      <image [image]="product.mainImg" />
+    </div>
+    <div class="details">
+      <h3 class="name">{{ product.name }}</h3>
+    </div>
+  </a>
+  } } @else { @for (_ of [0, 1, 2, 3, 4]; track $index) {
+  <div class="skeleton"></div>
+  } }
+</div>

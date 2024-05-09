@@ -1,0 +1,16 @@
+<header [class.show]="show || hide">
+  <a class="title" routerLink="/" href="/"> Bride2Be Boutique </a>
+  <a
+    mat-icon-button
+    [attr.data-badge]="cartLength()"
+    href="/cart"
+    routerLink="/cart"
+    class="cart"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </a>
+  @if (loading$ | async) {<mat-progress-bar
+    mode="indeterminate"
+  ></mat-progress-bar
+  >}
+</header>

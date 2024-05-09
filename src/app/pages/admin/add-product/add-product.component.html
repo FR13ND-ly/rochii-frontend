@@ -1,0 +1,58 @@
+<div class="header">
+  <h1>Adaugă produs</h1>
+</div>
+<div class="main">
+  <form [formGroup]="productForm" (submit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Denumire</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Descriere</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Preț</mat-label>
+      <input matInput formControlName="price" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="productForm.invalid || (loading$ | async)"
+    >
+      Publică
+    </button>
+  </form>
+  <section class="images">
+    <div class="add-image image" (click)="imageInput.click()">
+      <mat-icon>add</mat-icon>
+    </div>
+    @for (image of images; track image.id) {
+    <div class="image">
+      <div class="image__actions">
+        @if (image.main) {
+        <button mat-raised-button>
+          <mat-icon color="primary">task_alt</mat-icon> Copertă
+        </button>
+        } @else {
+        <button mat-flat-button (click)="onSetMain($index)">
+          <mat-icon color="primary">radio_button_unchecked</mat-icon> Copertă
+        </button>
+        }
+        <button mat-flat-button (click)="onDeleteImage($index)">
+          <mat-icon color="warn">delete</mat-icon> Șterge
+        </button>
+      </div>
+      <image [image]="image"></image>
+    </div>
+    }
+  </section>
+</div>
+<input
+  type="file"
+  class="hide"
+  (change)="onAddImage($event)"
+  accept="image/*"
+  data-max-size="2097152"
+  #imageInput
+/>

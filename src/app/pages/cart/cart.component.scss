@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+
+.main {
+  background-color: #fff;
+  padding: 2rem 3rem 3rem;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 2;
+}
+
+.bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,15 @@
+<section class="content">
+  <div class="img-wrapper">
+    <image [image]="product.mainImg" />
+  </div>
+  <div class="details">
+    <h2>Rochie de mireasă {{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p><b>Preț:</b> {{ product.price }} LEI</p>
+  </div>
+</section>
+<section class="actions">
+  <button mat-button (click)="onDeleteProduct()" color="warn">
+    <mat-icon>delete</mat-icon> Șterge
+  </button>
+</section>

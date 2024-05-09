@@ -1,0 +1,23 @@
+@if (orders$ | async; as orders) {
+<div class="header">
+  <h1>Comenzi</h1>
+</div>
+<div class="wrapper">
+  @for (order of orders.orders; track order.id) {
+  <order [order]="order" (delete)="orders.orders.splice($index, 1)" />
+  @if (!$last) {
+  <div class="divider"></div>
+  } } @empty {
+  <b>Nu există date </b>
+  }
+  <button
+    mat-raised-button
+    color="primary"
+    class="load-more"
+    *ngIf="orders.more"
+    (click)="onLoadMore()"
+  >
+    Încarcă mai multe
+  </button>
+</div>
+}

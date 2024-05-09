@@ -1,0 +1,26 @@
+<div class="header">
+  <h1>Dashboard</h1>
+</div>
+@if (dashboard$ | async; as dashboard) {
+<div class="content">
+  <div class="wrapper">
+    <article routerLink="/admin/products">
+      <mat-icon>spa</mat-icon>
+      <section>
+        <h2>Produse</h2>
+        <span>{{ dashboard.productsCount }} produs(e)</span>
+      </section>
+    </article>
+    <article routerLink="/admin/orders">
+      <mat-icon>calendar_month</mat-icon>
+      <section>
+        <h2>Comezi</h2>
+        <span
+          >{{ dashboard.ordersCount }}
+          {{ dashboard.ordersCount == 1 ? "comandă" : "comenzi" }}</span
+        >
+      </section>
+    </article>
+  </div>
+</div>
+}

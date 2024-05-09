@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+}
+
+.img-wrapper {
+  width: 10rem;
+  height: 13rem;
+}

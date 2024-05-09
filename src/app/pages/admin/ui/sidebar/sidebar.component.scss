@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+
+  gap: 0.5rem;
+  user-select: none;
+  padding: 1rem 1.5rem;
+  padding-right: 3rem;
+  text-wrap: nowrap;
+  transition: border-radius 0.2s;
+  flex-wrap: nowrap;
+  font-family: "Roboto", sans-serif;
+  span {
+    text-wrap: nowrap;
+  }
+  &--activated {
+    filter: brightness(0.95);
+  }
+  &:hover {
+    color: rgb(0, 56, 109);
+  }
+  @media (max-width: 801px) {
+    padding: 1rem;
+    span {
+      display: none;
+    }
+  }
+}
+
+.logout {
+  margin-top: 2rem;
+}

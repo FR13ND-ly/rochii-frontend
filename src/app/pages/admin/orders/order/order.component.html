@@ -1,0 +1,41 @@
+<h2 class="title">Comanda #{{ order.id }}</h2>
+<span><b>Nume:</b> {{ order.username }}</span>
+<span><b>Telefon:</b> {{ order.phone }}</span>
+<span><b>Email:</b> {{ order.email }}</span>
+<span><b>Data programării:</b> {{ order.date }} {{ order.hour }}:00</span>
+@if (order.message ) {
+<span><b>Detalii:</b> {{ order.message }}</span
+>}
+<h3 class="products">
+  Produse ({{ order.products.length }}) |
+  <span class="price">{{ price }} LEI</span>
+</h3>
+<div class="products-wrapper">
+  @for (product of order.products; track product.id;) {
+  <section class="content">
+    <div class="img-wrapper">
+      <image [image]="product.mainImg" />
+    </div>
+    <div class="details">
+      <h2>Rochie de mireasă {{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p><b>Preț:</b> {{ product.price }} LEI</p>
+    </div>
+  </section>
+  @if (!$last) {
+  <div class="divider"></div>
+  } }
+</div>
+<div class="actions">
+  @if (!order.completed) {
+  <button mat-flat-button color="primary" (click)="onComplete(order.id)">
+    Finalizează comanda
+  </button>
+  }@else {
+  <button mat-flat-button color="primary" disabled>Comandă finalizată</button>
+
+  }
+  <button mat-flat-button color="warn" (click)="onDelete(order.id)">
+    Șterge
+  </button>
+</div>

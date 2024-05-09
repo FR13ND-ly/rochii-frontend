@@ -1,0 +1,74 @@
+<div class="header">
+  <h1>Statistică</h1>
+</div>
+<mat-form-field>
+  <mat-label>Introdu un interval</mat-label>
+  <mat-date-range-input [rangePicker]="picker" [formGroup]="interval">
+    <input matStartDate formControlName="start" />
+    <input matEndDate formControlName="end" />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+<button
+  mat-icon-button
+  class="clear"
+  (click)="clear()"
+  matTooltip="Resetează intervalul"
+>
+  <mat-icon>close</mat-icon>
+</button>
+<div class="content">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Titlu</th>
+        <th>Număr vânzări</th>
+        <th>Preț total vânzări</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (productStats of (productsStats | sortByField : "price" ); track
+      productStats.id) {
+      <tr>
+        <td>{{ productStats.name }}</td>
+        <td>{{ productStats.orders }}</td>
+        <td>{{ productStats.price }} LEI</td>
+      </tr>
+      } @empty {
+      <span>Nu există date</span>
+      }
+      <tr class="total">
+        <td>Total:</td>
+        <td>{{ productsStats | sumByField : "amount" }}</td>
+        <td>{{ productsStats | sumByField : "price" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Telefon</th>
+        <th>Nume</th>
+        <th>Email</th>
+        <th>Număr de produse cumpărate</th>
+        <th>Total cheltuit</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (userStats of (usersStats); track $index) {
+      <tr>
+        <td>{{ userStats.id }}</td>
+        <td>{{ userStats.name }}</td>
+        <td>{{ userStats.email }}</td>
+        <td>
+          {{ userStats.orders }}
+        </td>
+        <td>{{ userStats.price }} LEI</td>
+      </tr>
+      } @empty {
+      <span>Nu există date</span>
+      }
+    </tbody>
+  </table>
+</div>

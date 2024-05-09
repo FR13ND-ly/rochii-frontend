@@ -1,0 +1,36 @@
+<div class="main" *ngIf="products$ | async as products">
+  <cart-items *ngIf="stage() == 1" [products]="products" />
+  <cart-details [detailsForm]="detailsForm" *ngIf="stage() == 2" />
+  <cart-appointmenting [dateForm]="dateForm" *ngIf="stage() == 3" />
+  <cart-accomplished *ngIf="stage() == 4" />
+  <div class="divider" *ngIf="stage() < 4"></div>
+  <div *ngIf="products.length">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onFinishItems()"
+      *ngIf="stage() == 1"
+    >
+      Continuă
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onFinishDetails()"
+      *ngIf="stage() == 2"
+      [disabled]="detailsForm.invalid"
+    >
+      Alege data
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onFinishAppointmenting(products)"
+      *ngIf="stage() == 3"
+      [disabled]="dateForm.invalid"
+    >
+      Finalizează
+    </button>
+  </div>
+</div>
+<img src="/assets/cart.webp" class="bg" />

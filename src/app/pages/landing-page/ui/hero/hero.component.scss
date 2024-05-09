@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  position: absolute;
+  z-index: 9;
+  right: 18rem;
+  top: 0rem;
+  font-size: 7rem;
+  color: #fff;
+  font-weight: lighter;
+  text-transform: uppercase;
+  span {
+    display: block;
+    margin-left: 5rem;
+  }
+}
+
+.text {
+  position: absolute;
+  z-index: 9;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  right: 13rem;
+  bottom: 12rem;
+  color: #fff;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.btn {
+  display: block;
+  position: absolute;
+  z-index: 9;
+  right: 35rem;
+  bottom: 6rem;
+  padding: 1.5rem 3rem;
+  padding-top: 1.2rem;
+  font-size: 1.3rem;
+}

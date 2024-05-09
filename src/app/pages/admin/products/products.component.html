@@ -1,0 +1,23 @@
+<div class="header">
+  <h1>Produse</h1>
+  <button mat-raised-button color="accent" routerLink="/admin/products/add">
+    <mat-icon>add</mat-icon>
+    Adaugă produs
+  </button>
+</div>
+<div class="main" *ngIf="products$ | async as products">
+  @for (product of products.products; track product.id ) {
+  <product [product]="product" (delete)="products.products.splice($index, 1)" />
+  @if (!$last || products.more) {
+  <div class="divider"></div>
+  } }
+  <button
+    mat-raised-button
+    color="primary"
+    class="load-more"
+    *ngIf="!(loading$ | async) && products.more"
+    (click)="onLoadMore()"
+  >
+    Încarcă mai multe
+  </button>
+</div>

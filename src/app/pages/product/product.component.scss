@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  margin-top: 7rem;
+  padding-inline: 20rem;
+  margin-bottom: 5rem;
+}
+
+article {
+  display: flex;
+  gap: 4rem;
+}
+
+.content {
+  width: 100%;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-block: 1rem 2rem;
+}
+
+.price {
+  margin-block: 1rem;
+}
+
+.btn {
+  margin-top: 3rem;
+}
+
+.added {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+}
