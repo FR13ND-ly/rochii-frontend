@@ -1,4 +1,4 @@
 export const environment = {
   dev: true,
-  apiUrl: 'http://127.0.0.1:8000/api/',
+  apiUrl: 'https://dolphin-app-x82qz.ondigitalocean.app/api/',
 };
