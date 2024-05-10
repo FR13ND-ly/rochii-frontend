@@ -10,9 +10,9 @@ export const logoutGuard: CanActivateFn = (route, state) => {
 
   let user$ = store.select(selectUser);
 
+  user$.subscribe(console.log);
   return user$.pipe(
     map((res: any) => {
-      console.log(res);
       if (!res?.user.logged) {
         return true;
       } else {

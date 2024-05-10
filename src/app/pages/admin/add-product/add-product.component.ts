@@ -41,6 +41,7 @@ export class AddProductComponent implements OnInit {
   }
 
   onAddImage(e: any) {
+    console.log(e.target.value);
     if (e.target.value == '') return;
     this.store.dispatch(setLoading({ state: true }));
     this.filesService
