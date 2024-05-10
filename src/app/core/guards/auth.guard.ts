@@ -15,7 +15,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   return user$.pipe(
     map((res: any) => {
       store.dispatch(setLoading({ state: false }));
-      if (res?.logged) {
+      if (res?.user?.logged || res?.logged) {
         return true;
       } else {
         router.navigate(['/admin/login']);

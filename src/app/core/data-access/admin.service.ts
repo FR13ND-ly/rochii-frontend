@@ -10,7 +10,7 @@ export class AdminService {
   apiUrl = environment.apiUrl + 'administrator/';
 
   getAllProducts(index: number) {
-    return this.http.get(`${this.apiUrl}products/get/all/${index}`);
+    return this.http.get(`${this.apiUrl}products/get/all/${index}/`);
   }
 
   getProductById(id: number) {

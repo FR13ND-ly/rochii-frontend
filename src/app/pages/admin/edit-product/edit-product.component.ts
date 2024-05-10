@@ -63,6 +63,7 @@ export class EditProductComponent implements OnInit {
   }
 
   onAddImage(e: any) {
+    if (e.target.value == '') return;
     this.store.dispatch(setLoading({ state: true }));
     this.filesService
       .uploadImage(e)
@@ -76,6 +77,7 @@ export class EditProductComponent implements OnInit {
           id: res.id,
           main: !this.images.length,
         });
+        e.target.value = '';
       });
   }
 
@@ -89,7 +91,14 @@ export class EditProductComponent implements OnInit {
 
   onDeleteImage(index: number) {
     if (!confirm('Ești sigur?')) return;
-    this.images.splice(index, 1);
+    if (this.images[index].main) {
+      this.images.splice(index, 1);
+      if (this.images.length) {
+        this.images[0].main = true;
+      }
+    } else {
+      this.images.splice(index, 1);
+    }
   }
 
   onSubmit() {

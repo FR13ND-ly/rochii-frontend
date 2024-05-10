@@ -41,6 +41,7 @@ export class AddProductComponent implements OnInit {
   }
 
   onAddImage(e: any) {
+    if (e.target.value == '') return;
     this.store.dispatch(setLoading({ state: true }));
     this.filesService
       .uploadImage(e)
@@ -54,6 +55,7 @@ export class AddProductComponent implements OnInit {
           id: res.id,
           main: !this.images.length,
         });
+        e.target.value = '';
       });
   }
 

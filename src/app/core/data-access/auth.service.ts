@@ -3,7 +3,7 @@ import { Injectable, afterNextRender, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { setLoading } from '../../store/loading/loading.actions';
-import { catchError, tap } from 'rxjs';
+import { catchError, interval, tap } from 'rxjs';
 import { userActions } from '../../store/user/user.actions';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -33,9 +33,12 @@ export class AuthService {
       .pipe(
         tap((user: any) => {
           if (!user.logged) return;
-          this.store.dispatch(setLoading({ state: false }));
           localStorage.setItem('token', user.token);
-          this.router.navigate(['/admin/dashboard']);
+          this.store.dispatch(userActions.loginSuccess({ user: { user } }));
+          interval(0).subscribe(() => {
+            this.store.dispatch(setLoading({ state: false }));
+            this.router.navigate(['/admin/dashboard']);
+          });
         }),
         catchError((): any => {
           this.store.dispatch(setLoading({ state: false }));

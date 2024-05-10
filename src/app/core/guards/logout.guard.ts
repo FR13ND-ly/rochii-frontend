@@ -12,7 +12,8 @@ export const logoutGuard: CanActivateFn = (route, state) => {
 
   return user$.pipe(
     map((res: any) => {
-      if (!res?.logged) {
+      console.log(res);
+      if (!res?.user.logged) {
         return true;
       } else {
         router.navigate(['/admin/dashboard']);

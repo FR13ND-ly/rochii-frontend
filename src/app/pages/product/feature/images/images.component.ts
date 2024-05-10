@@ -33,8 +33,8 @@ export class ImagesComponent implements OnChanges {
   }
 
   ngOnChanges(changes: any): void {
-    console.log(changes);
     this.mainImage = changes['product'].currentValue.mainImg;
+    this.images = [];
     changes['product'].currentValue.images.forEach((img: any) => {
       this.images.push({
         id: img.id,
