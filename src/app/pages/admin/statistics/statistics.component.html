@@ -1,6 +1,7 @@
 <div class="header">
   <h1>Statistică</h1>
 </div>
+@if (statistics) {
 <mat-form-field>
   <mat-label>Introdu un interval</mat-label>
   <mat-date-range-input [rangePicker]="picker" [formGroup]="interval">
@@ -72,3 +73,4 @@
     </tbody>
   </table>
 </div>
+}
