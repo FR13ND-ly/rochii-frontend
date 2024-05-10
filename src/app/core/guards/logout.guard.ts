@@ -8,7 +8,6 @@ export const logoutGuard: CanActivateFn = (route, state) => {
   let store = inject(Store);
   let router = inject(Router);
 
-  // let user$ = store.select(selectUser);
   let authToken: any = localStorage.getItem('token');
   if (authToken && authToken != 'unauthorized') {
     router.navigate(['/admin/dashboard']);
@@ -16,11 +15,14 @@ export const logoutGuard: CanActivateFn = (route, state) => {
   } else {
     return true;
   }
+  // let user$ = store.select(selectUser);
   // return user$.pipe(
   //   map((res: any) => {
   //     if (!res?.user.logged) {
+  //       console.log('c');
   //       return true;
   //     } else {
+  //       console.log('d');
   //       router.navigate(['/admin/dashboard']);
   //       return false;
   //     }

@@ -10,20 +10,19 @@ export const authGuard: CanActivateFn = (route, state) => {
   let router = inject(Router);
   store.dispatch(setLoading({ state: true }));
 
-  // let user$ = store.select(selectUser);
-  console.log('a');
   let authToken: any = localStorage.getItem('token');
-  console.log(authToken);
   if (!authToken || authToken == 'unauthorized') {
     router.navigate(['/admin/login']);
     return false;
   } else {
     return true;
   }
+  // let user$ = store.select(selectUser);
   // return user$.pipe(
   //   map((res: any) => {
   //     store.dispatch(setLoading({ state: false }));
   //     if (res?.user?.logged || res?.logged) {
+  //       console.log('b');
   //       return true;
   //     } else {
   //       console.log('a');
