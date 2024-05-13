@@ -3,16 +3,23 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding-inline: 10rem;
-  margin-top: 7rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  padding-inline: 1rem;
+  @media (min-width: 801px) {
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+    padding-inline: 10rem;
+  }
 }
 
 .main {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  padding-inline: 8rem;
+  @media (min-width: 801px) {
+    padding-inline: 8rem;
+  }
 }
 
 .wrapper {
@@ -24,10 +31,20 @@
     width: 20rem;
     height: 28rem;
     object-fit: cover;
+    @media (max-width: 801px) {
+      display: none;
+    }
   }
   h1 {
-    font-size: 2.4rem;
     margin-top: 1rem;
+    @media (min-width: 801px) {
+      font-size: 2.4rem;
+    }
+  }
+  @media (max-width: 801px) {
+    padding-inline: 0rem;
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
@@ -36,6 +53,9 @@
   width: 75%;
   height: 1px;
   background-color: #000;
+  @media (max-width: 801px) {
+    display: none;
+  }
 }
 
 .up-div {
@@ -55,32 +75,51 @@
 h2 {
   margin-block: 3rem;
   font-size: 2rem;
+  @media (max-width: 801px) {
+    font-size: 1.6rem;
+    margin-block: 2rem 0;
+  }
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  @media (min-width: 801px) {
+    font-size: 1.6rem;
+  }
 }
 
 .details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
   background-color: #fff;
-  padding-bottom: 4rem;
   width: fit-content;
-  padding-inline: 6rem;
+  padding-bottom: 2.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding-inline: 2rem;
+  @media (min-width: 801px) {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    padding-inline: 6rem;
+  }
 }
 
 .location {
   display: flex;
   gap: 3rem;
+  @media (max-width: 801px) {
+    gap: 2rem;
+    flex-direction: column;
+  }
 }
 
 iframe {
-  width: 30rem;
+  width: auto;
   height: 20rem;
+  @media (min-width: 801px) {
+    width: 30rem;
+  }
 }
 
 .socials {
