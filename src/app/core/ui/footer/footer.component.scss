@@ -8,6 +8,7 @@ footer {
   border-top: 1px solid #000;
   @media (max-width: 801px) {
     padding-inline: 1rem;
+    padding-top: 1.5rem;
   }
 }
 
@@ -25,6 +26,9 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
 }
 
 .list {

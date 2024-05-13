@@ -9,7 +9,14 @@ import {
 import { MaterialModule } from '../../../../core/feature/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersService } from '../../../../core/data-access/orders.service';
-import { BehaviorSubject, Observable, Subject, switchMap, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  Subject,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { CustomDateAdapter } from '../../../../core/feature/material/custom-date.adapter';

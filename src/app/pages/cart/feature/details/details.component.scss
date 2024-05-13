@@ -1,11 +1,14 @@
 :host {
   display: block;
-  width: 20vw;
+  @media (min-width: 801px) {
+    width: 20vw;
+  }
 }
 
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
   mat-form-field {
     width: 100%;
   }

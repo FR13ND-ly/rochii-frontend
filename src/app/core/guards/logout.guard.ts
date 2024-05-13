@@ -11,6 +11,7 @@ export const logoutGuard: CanActivateFn = (route, state) => {
   let authToken: any = localStorage.getItem('token');
   if (authToken && authToken != 'unauthorized') {
     router.navigate(['/admin/dashboard']);
+    console.log('a');
     return false;
   } else {
     return true;

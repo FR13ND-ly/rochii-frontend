@@ -1,23 +1,28 @@
 :host {
   display: flex;
   gap: 0.5rem;
+  @media (max-width: 801px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .images {
-  max-height: 32rem;
-  overflow-y: clip;
   position: relative;
   &__inner {
     display: flex;
-    flex-direction: column;
     gap: 0.2rem;
-    transition: 0.2s;
+    @media (min-width: 801px) {
+      transition: 0.2s;
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 801px) {
+    overflow-y: clip;
+    max-height: 32rem;
   }
 }
 
 .image-wrapper {
-  height: 10rem;
-  width: 7rem;
   cursor: pointer;
   transition: 0.2s;
   border: 2px solid transparent;
@@ -26,17 +31,22 @@
     width: 100%;
     height: 100%;
   }
-  &:hover {
-    border: 2px solid #707070;
+  @media (min-width: 801px) {
+    height: 10rem;
+    width: 7rem;
+    &:hover {
+      border: 2px solid #707070;
+    }
   }
 }
 
 .main-image-wrapper {
-  width: 25rem;
-  height: 32rem;
+  width: 100%;
+  height: 50vh;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  image {
-    width: 50px;
+  @media (min-width: 801px) {
+    width: 25rem;
+    height: 32rem;
   }
 }
 
@@ -54,6 +64,9 @@
   cursor: pointer;
   scale: 2;
   color: #fff;
+  @media (max-width: 801px) {
+    display: none;
+  }
 }
 
 .increment {

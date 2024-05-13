@@ -16,7 +16,8 @@
 <button
   class="btn"
   (click)="onLoadMore()"
-  *ngIf="!(loading$ | async) && products.more"
+  [disabled]="loading$ | async"
+  *ngIf="products.more"
 >
   Mai multe
 </button>

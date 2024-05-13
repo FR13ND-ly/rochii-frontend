@@ -35,10 +35,12 @@ article {
   justify-content: space-between;
   gap: 2rem;
   @media (max-width: 801px) {
+    gap: 1rem;
     flex-direction: column;
     gap: 0;
   }
 }
+
 span {
   line-height: 1.4;
 }
@@ -54,9 +56,15 @@ span {
 
 .content {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   .img-wrapper {
     width: 10rem;
-    height: 13rem;
+    height: 10rem;
+    @media (min-width: 801px) {
+      height: 13rem;
+    }
+  }
+  @media (min-width: 801px) {
+    gap: 2rem;
   }
 }

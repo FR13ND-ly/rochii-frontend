@@ -9,26 +9,27 @@ nav {
   align-items: center;
   background-color: #fff;
   cursor: pointer;
-
   gap: 0.5rem;
   user-select: none;
   padding: 1rem 1.5rem;
   padding-right: 3rem;
   text-wrap: nowrap;
-  transition: border-radius 0.2s;
+  transition: 0.2s;
   flex-wrap: nowrap;
   font-family: "Roboto", sans-serif;
+  border-left: 4px solid transparent;
   span {
     text-wrap: nowrap;
   }
   &--activated {
-    filter: brightness(0.95);
+    border-left: 4px solid rgb(0, 56, 109);
   }
   &:hover {
     color: rgb(0, 56, 109);
   }
   @media (max-width: 801px) {
     padding: 1rem;
+    padding-left: 0.8rem;
     span {
       display: none;
     }

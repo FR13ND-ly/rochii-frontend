@@ -44,8 +44,11 @@ body {
     margin-block: 0 1rem;
   }
   @media (max-width: 801px) {
+    button {
+      margin-bottom: 1rem;
+    }
     align-items: flex-start !important;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 

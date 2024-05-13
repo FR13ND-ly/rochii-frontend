@@ -1,6 +1,10 @@
 .main {
-  max-height: 40vh;
+  max-height: 90vh;
   overflow-y: auto;
-  padding-right: 1rem;
-  width: 50vw;
+  width: 100%;
+  @media (min-width: 801px) {
+    max-height: 40vh;
+    padding-right: 1rem;
+    width: 50vw;
+  }
 }

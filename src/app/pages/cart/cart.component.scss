@@ -8,10 +8,15 @@
 
 .main {
   background-color: #fff;
-  padding: 2rem 3rem 3rem;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   z-index: 2;
+  padding: 1.4rem 2rem 2rem;
+  width: calc(100% - 2rem);
+  @media (min-width: 801px) {
+    width: fit-content;
+    padding: 2rem 3rem 3rem;
+  }
 }
 
 .bg {

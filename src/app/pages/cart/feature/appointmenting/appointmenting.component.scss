@@ -2,14 +2,26 @@
   display: flex;
   gap: 1rem;
   margin-top: -1rem;
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
 }
 
 .calendar-wrapper {
   width: 250px;
+  @media (max-width: 801px) {
+    width: 100%;
+  }
 }
 
 .hour-wrapper {
-  width: 200px;
-  margin-top: 1.5rem;
+  width: 100%;
   margin-right: 1rem;
+  mat-form-field {
+    width: 100%;
+  }
+  @media (min-width: 801px) {
+    width: 200px;
+    margin-top: 1.5rem;
+  }
 }

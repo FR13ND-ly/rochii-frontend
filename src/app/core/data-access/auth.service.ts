@@ -37,7 +37,8 @@ export class AuthService {
           this.store.dispatch(userActions.loginSuccess({ user: { user } }));
           interval(0).subscribe(() => {
             this.store.dispatch(setLoading({ state: false }));
-            this.router.navigate(['/admin/dashboard']);
+            location.href = '/admin/dashboard';
+            // this.router.navigate(['/admin/dashboard']);
           });
         }),
         catchError((): any => {

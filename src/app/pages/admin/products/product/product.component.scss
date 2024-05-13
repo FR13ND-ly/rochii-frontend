@@ -1,15 +1,40 @@
 :host {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
 }
 
 .content {
   display: flex;
-  gap: 2rem;
+  width: 100%;
+  gap: 1.5rem;
+  @media (min-width: 801px) {
+    gap: 2rem;
+  }
+}
+
+.edit {
+  @media (max-width: 801px) {
+    display: none;
+  }
 }
 
 .img-wrapper {
-  width: 10rem;
-  height: 13rem;
+  width: 7rem;
+  height: 10rem;
+  @media (min-width: 801px) {
+    width: 10rem;
+    height: 13rem;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  @media (max-width: 801px) {
+    margin-top: 1rem;
+  }
 }
