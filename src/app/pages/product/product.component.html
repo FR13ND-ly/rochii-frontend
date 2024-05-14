@@ -9,7 +9,9 @@
     <b>Detalii</b>
     <p class="description">{{ product.description }}</p>
     @if (isInCart$ | async) {
-    <button class="added btn">Produsul a fost adăugat în coș</button>
+    <a class="added btn" href="/cart" routerLink="/cart"
+      >Produsul a fost adăugat în coș</a
+    >
     } @else {
     <button class="btn" (click)="onAddToCart(product.id)">Adaugă în coș</button>
     }

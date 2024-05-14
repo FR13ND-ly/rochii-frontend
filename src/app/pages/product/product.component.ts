@@ -1,5 +1,5 @@
 import { Component, afterNextRender, inject } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../../core/data-access/products.service';
 import { Observable, catchError, of, switchMap, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -12,7 +12,7 @@ import { setLoading } from '../../store/loading/loading.actions';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [SimilarProductsComponent, ImagesComponent, AsyncPipe],
+  imports: [SimilarProductsComponent, ImagesComponent, AsyncPipe, RouterLink],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
