@@ -10,7 +10,7 @@
       <h3 class="name">{{ product.name }}</h3>
     </div>
   </a>
-  } } @else { @for (_ of [0, 1, 2, 3, 4]; track $index) {
+  } } @else { @for (_ of [0, 1, 2, 3]; track $index) {
   <div class="skeleton"></div>
   } }
 </div>
