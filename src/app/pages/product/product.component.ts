@@ -1,7 +1,7 @@
 import { Component, afterNextRender, inject } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ProductsService } from '../../core/data-access/products.service';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, catchError, of, switchMap, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ImagesComponent } from './feature/images/images.component';
 import { CartService } from '../../core/data-access/cart.service';
@@ -19,6 +19,7 @@ import { setLoading } from '../../store/loading/loading.actions';
 export class ProductComponent {
   store = inject(Store);
   route = inject(ActivatedRoute);
+  router = inject(Router);
   productsService = inject(ProductsService);
   cartService = inject(CartService);
 
@@ -36,7 +37,11 @@ export class ProductComponent {
         switchMap((params: Params) => {
           return this.productsService.getById(params['params'].id);
         }),
-        tap(() => this.store.dispatch(setLoading({ state: false })))
+        tap(() => this.store.dispatch(setLoading({ state: false }))),
+        catchError((err: any) => {
+          this.router.navigateByUrl('/');
+          return of({});
+        })
       );
     });
   }

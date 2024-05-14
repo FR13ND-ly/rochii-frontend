@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MaterialModule } from '../../../core/feature/material/material.module';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { userActions } from '../../../store/user/user.actions';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   store = inject(Store);
   fb = new FormBuilder();
 
@@ -20,6 +20,10 @@ export class LoginComponent {
     username: ['', Validators.required],
     password: ['', Validators.required],
   });
+
+  ngOnInit(): void {
+    this.store.dispatch(setLoading({ state: false }));
+  }
 
   onSubmit() {
     if (this.authForm.invalid) return;
