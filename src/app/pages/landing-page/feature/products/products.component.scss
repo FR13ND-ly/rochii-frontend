@@ -7,6 +7,9 @@
   padding-inline: 1rem;
   margin-top: 3rem;
   @media (min-width: 801px) {
+    padding-inline: 5rem;
+  }
+  @media (min-width: 1441px) {
     margin-bottom: 5rem;
     margin-top: 5rem;
     padding-inline: 15rem;
@@ -25,6 +28,9 @@ h1 {
   width: 100%;
   gap: 1rem;
   @media (min-width: 801px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1441px) {
     gap: 2rem;
     grid-template-columns: repeat(4, 1fr);
   }

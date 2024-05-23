@@ -32,9 +32,13 @@ export class CartService {
       let cart: any[] = [...this.cartSubject$.value, product];
       this.cartSubject$.next(cart);
     }
-    let snackbar = this.snackbar.open('Produsul a fost adăugat în coș', 'Coș', {
-      duration: 5000,
-    });
+    let snackbar = this.snackbar.open(
+      'Produsul a fost adăugat',
+      'Produse Selectate',
+      {
+        duration: 5000,
+      }
+    );
     snackbar.onAction().subscribe(() => this.router.navigate(['/cart']));
   }
 

@@ -33,6 +33,11 @@ h1 {
     }
   }
   @media (min-width: 801px) {
+    right: 15rem;
+    top: 0rem;
+    font-size: 5rem;
+  }
+  @media (min-width: 1441px) {
     right: 18rem;
     top: 0rem;
     font-size: 7rem;
@@ -51,6 +56,11 @@ h1 {
   right: 1rem;
   bottom: 6rem;
   @media (min-width: 801px) {
+    font-size: 1rem;
+    right: 13rem;
+    bottom: 8rem;
+  }
+  @media (min-width: 1441px) {
     font-size: 1.4rem;
     right: 13rem;
     bottom: 12rem;
@@ -64,6 +74,13 @@ h1 {
   right: 1rem;
   bottom: 2rem;
   @media (min-width: 801px) {
+    right: 25rem;
+    bottom: 2rem;
+    padding: 1rem 2rem;
+    padding-top: 0.8rem;
+    font-size: 1.3rem;
+  }
+  @media (min-width: 1441px) {
     right: 35rem;
     bottom: 6rem;
     padding: 1.5rem 3rem;

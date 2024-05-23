@@ -10,10 +10,12 @@
     <p class="description">{{ product.description }}</p>
     @if (isInCart$ | async) {
     <a class="added btn" href="/cart" routerLink="/cart"
-      >Produsul a fost adăugat în coș</a
+      >Vezi produsele selectate</a
     >
     } @else {
-    <button class="btn" (click)="onAddToCart(product.id)">Adaugă în coș</button>
+    <button class="btn" (click)="onAddToCart(product.id)">
+      Programează-te în magazin
+    </button>
     }
   </div>
 </article>
