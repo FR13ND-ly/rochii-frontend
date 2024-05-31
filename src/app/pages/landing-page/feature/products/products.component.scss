@@ -17,9 +17,18 @@
 }
 
 h1 {
+  margin-bottom: 0;
   @media (min-width: 801px) {
-    margin-bottom: 3rem;
     font-size: 3rem;
+  }
+}
+
+.description {
+  text-align: center;
+  text-wrap: pretty;
+
+  @media (min-width: 801px) {
+    margin-bottom: 2rem;
   }
 }
 

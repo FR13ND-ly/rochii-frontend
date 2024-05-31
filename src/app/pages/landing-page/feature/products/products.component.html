@@ -1,4 +1,7 @@
 <h1 id="products">Catalogul nostru</h1>
+<p class="description">
+  Alege rochia dorită si progrmează-te în magazinul nostru
+</p>
 @if (products$ | async; as products) {
 <div class="products">
   @for (product of products.products; track product.id) {
